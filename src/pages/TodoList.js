@@ -11,6 +11,7 @@ class TodoList extends React.Component {
             input: '',
             count: 0,
         }
+        this.inputRef = React.createRef()
     }
 
     render() {
@@ -22,8 +23,15 @@ class TodoList extends React.Component {
 
                 <input type='text' value={input} onChange={(e) => this.setState({ input: e.target.value })} />
                 <button onClick={() => this.setState({ count: count + 1 })}>add Click {count}</button>
+                <br />
+                <input type='text' ref={this.inputRef} />
                 {todoStore.todos.map((todo) => (
-                    <Todo key={todo.id} todo={todo} change={todoStore.changed}/>
+                    <Todo
+                        key={todo.id}
+                        todo={todo}
+                        change={todoStore.changed}
+                        ref={this.inputRef}
+                    />
                 ))}
                 <p>unfinishCount: {todoStore.unfinishCount}</p>
                 <Child count={{ count }}/>         
