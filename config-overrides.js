@@ -1,7 +1,8 @@
 const {
     override,
     fixBabelImports,
-    addDecoratorsLegacy
+    addBabelPreset,
+    addDecoratorsLegacy,
   } = require("customize-cra");
   
   module.exports = override(
@@ -10,6 +11,6 @@ const {
       libraryName: "antd",
       libraryDirectory: "es",
       style: "css"
-    }),
-    addDecoratorsLegacy() //配置装饰器
+    }),   
+    addDecoratorsLegacy(), //配置装饰器
   );

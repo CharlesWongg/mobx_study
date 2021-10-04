@@ -1,13 +1,13 @@
-import AppView from "./pages/AppView";
-import appState from "./stores/appState";
-import { configure } from "mobx";
+import React from "react";
 
-configure({ enforceActions: 'observed' })
+import TodoList from "./pages/TodoList";
+
+import todoStore from './stores/todoStore'
 
 function App() {
   return (
     <div>
-      <AppView appState={appState}/>
+      <TodoList todoStore={todoStore} />
     </div>
   );
 }

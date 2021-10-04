@@ -4,10 +4,11 @@ import { observer } from 'mobx-react'
 @observer
 class AppView extends React.Component {
     render() {
+        const { appState } = this.props
         return <>
             <div>appState</div>
-            <p>timer: {this.props.appState.timer}</p>
-            <input type='button' value='reset' onClick={this.props.appState.reset}/>
+            <p>timer: {appState.timer}</p>
+            <input type='button' value='reset' onClick={appState.reset}/>
         </>
     }
 }
