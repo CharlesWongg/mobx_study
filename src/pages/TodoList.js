@@ -1,9 +1,9 @@
 import React from 'react'
-import { observer } from 'mobx-react'
+// import { observer } from 'mobx-react'
 
 import Todo from '../components/Todo'
 
-@observer
+// @observer
 class TodoList extends React.Component {
     constructor(props) {
         super(props)
